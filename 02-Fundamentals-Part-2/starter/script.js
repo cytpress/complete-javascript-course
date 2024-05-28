@@ -1,74 +1,56 @@
 'use strict';
-// const jonas = {
-//     firstName: 'Jonas',
-//     lastName: 'Schedtmann',
-//     birthYear: 1991,
-//     job: 'teacher',
-//     friends: ['Michael', 'Peter', 'Steven'],
-//     hasDriversLicence: false,
 
-//     calcAge: function () {
-//         this.age = 2037 - this.birthYear;
-//         return this.age;
-//     },
+// const jonas = [
+//     'Jonas',
+//     'Schemedtmann',
+//     2037 - 1991,
+//     'teacher',
+//     ['Michael', 'Peter', 'Steven'],
+//     true,
+// ];
 
-//     getSummary: function () {
-//         return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicence ? 'a' : 'no'} driver's licence. `
-//     },
+// for (let i = jonas.length - 1; i >= 0; i--) {
 
-
-// };
-
-// console.log(jonas.calcAge());
-// console.log(jonas.age);
-// console.log(jonas.getSummary());
-
-
-// console.log(jonas['lastName']);
-
-// const nameKey = 'Name';
-// console.log(jonas['first' + nameKey]);
-// console.log(jonas['last' + nameKey]);
-
-
-// const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and firends');
-
-// if (jonas[interestedIn]) {
-//     console.log(jonas[interestedIn]);
-// } else {
-//     console.log('property not exist.');
+//     console.log(jonas[i], typeof jonas[i]);
 // }
 
-// jonas.location = 'Portugal';
-// jonas['twitter'] = '@jonasschmedtman';
-// console.log(`${jonas.firstName} has ${jonas.friends.length} firends, and his best friend is called ${jonas.friends[0]}`);
+// for (let exercise = 1; exercise <= 3; exercise++) {
+//     console.log(`-------start exercise ${exercise}`);
+//     for (let rep = 1; rep <= 3; rep++) {
+//         console.log(`Lifting weight rep ${rep}`);
+//     }
+// }
 
-const mark = {
-    fullName: "Mark Miller",
-    mass: 78,
-    height: 1.69,
-    calcBMI: function () {
-        this.bmi = this.mass / (this.height * this.height);
-        return this.bmi;
-    }
-};
-
-const john = {
-    fullName: "John Smith",
-    mass: 92,
-    height: 1.95,
-    calcBMI: function () {
-        this.bmi = this.mass / (this.height * this.height);
-        return this.bmi;
-    }
-};
-
-mark.calcBMI();
-john.calcBMI();
+// let rollDice = Math.floor(Math.random() * 6 + 1)
+// while (rollDice !== 6) {
+//     rollDice = Math.floor(Math.random() * 6 + 1)
+//     console.log(rollDice);
+// }
 
 
-if (mark.bmi > john.bmi) {
-    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})`);
-} else if (john.bmi > mark.bmi) {
-    console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})`);
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 }
+const tips = [];
+const totals = [];
+const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+for (let i = 0; i < bill.length; i++) {
+    tips.push(calcTip(bill[i]));
+    totals.push(Number(tips[i]) + Number(bill[i]));
+
+
+}
+function calcAverage(arr) {
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+        sum = arr[i] + sum
+        
+    }
+    return sum / arr.length
+}
+console.log(tips);
+console.log(totals);
+console.log(calcAverage(totals));
+
+
+
